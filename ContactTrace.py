@@ -15,7 +15,7 @@ def home():
     print("|     |5| Exit                  |")
     print("|                               |")
     print("---------------------------------")
-    menu=input("| What can we do for you today? |")
+    menu=input("| What can we do for you today? |\t")
     print("---------------------------------")
 
     if menu =="1":
@@ -29,6 +29,9 @@ def home():
     elif menu=="5":
         print("Thank you for filling out the form!")
         exit()
+    else:
+        print ("Invalid option. Try Again.")
+        yesno()
 
 
 def yesno():
@@ -39,7 +42,10 @@ def yesno():
             break
         elif homemenu == "N":
             print("Thank you for filling out the contact tracing form!")
-            exit()    
+            exit()
+        else:
+            print("Invalid option")
+                
 
 
 # Menu:
@@ -112,7 +118,7 @@ def edit_contact():
 
 # 4 -> Delete info
 def delete():
-    delete_info= input("Enter the name of the contact that you want to delete: ")
+    delete_info= input("Enter the name of the contact that you want to delete: ").upper()
     del contacts[delete_info]
     print ("The contact has been deleted")
     yesno()
