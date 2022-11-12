@@ -90,9 +90,15 @@ def edit_contact():
         print("4. Covid Status:", contacts.get(edit)[2])
         edit_what=input("What information do you want to edit? [1-4]")
         if edit_what == "1":
-            new_name= input("Enter the new name: ")
+            new_name= input("Enter the new name: ").upper()
             contacts[new_name]=contacts.pop(edit)
             print(contacts[new_name])
+            print("Updated information: ")
+            print("Name:", new_name)
+            print("Age:",contacts.get(new_name)[0])
+            print("Phone Number:", contacts.get(new_name)[1])
+            print("Covid Status:", contacts.get(new_name)[2])
+            yesno()
         elif edit_what =="2":
             new_age= input("Enter new age: ")
             contacts.get(edit)[0]=new_age
