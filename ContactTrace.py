@@ -58,13 +58,15 @@ def search_contact():
     search = input("Enter the first and last name of the contact: ")
     if search in contacts:
         print("Name:", search)
-        print(contacts[search])
+        print("Age:",contacts.get(search)[0])
+        print("Phone Number:", contacts.get(search)[1])
+        print("Covid Status:", contacts.get(search)[2])
         yesno()
 
 # 3 -> Edit info
 def edit_contact():
     edit = input("Enter the first and last name of the contact: ")
-    print(contacts.get("edit"))
+    print(contacts.get(edit))
     print("Enter the new information")
 
 
