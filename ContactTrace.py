@@ -24,6 +24,11 @@ def home():
         search_contact()
     elif menu=="3":
         edit_contact()
+    elif menu=="4":
+        delete()
+    elif menu=="5":
+        print("Thank you for filling out the form!")
+        exit()
 
 
 def yesno():
@@ -40,7 +45,7 @@ def yesno():
 # Menu:
 # 1 -> Add an item
 def add_contact():
-    name = input("Enter your first and last name: ").upper()
+    name = input("Enter your name: ").upper()
     age = input("Enter your age: ")
     phone_num= input("Enter your phone number (ex. 09xxxxxxxxx): ")
     test_covid= input("Did you test positive for COVID or have any COVID-like symptoms? ")
@@ -58,7 +63,7 @@ def add_contact():
 
 # 2 -> Search
 def search_contact():
-    search = input("Enter the first and last name of the contact: ").upper()
+    search = input("Enter the name of the contact you want to search: ").upper()
     if search in contacts:
         print("Name:", search)
         print("Age:",contacts.get(search)[0])
@@ -68,7 +73,7 @@ def search_contact():
 
 # 3 -> Edit info
 def edit_contact():
-    edit = input("Enter the first and last name of the contact: ").upper()
+    edit = input("Enter the name of the contact you want to edit: ").upper()
     if edit in contacts:
         print("1. Name:", edit)
         print("2. Age:",contacts.get(edit)[0])
@@ -102,8 +107,13 @@ def edit_contact():
         yesno()
 
 
-
 # 4 -> Delete info
+def delete():
+    delete_info= input("Enter the name of the contact that you want to delete: ")
+    del contacts[delete_info]
+    print ("The contact has been deleted")
+    yesno()
+
 # 5 -> Exit (y/n)
 # - Allow user to select item in the menu (check if valid)
 # - Perform the selected option
