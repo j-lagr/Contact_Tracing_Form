@@ -1,9 +1,18 @@
 #Write a python program for contact tracing:
 # - Display a menu of options
+print()
+print("---------------------------------")
+print("| PourOver Contact Tracing Form |")
+print("---------------------------------")
+print("|                               |")
+print("|    |1|  ")
+
 # Menu:
 # 1 -> Add an item
 # 2 -> Search
-# 3 -> Exit (y/n)
+# 3 -> Edit info
+# 4 -> Delete info
+# 5 -> Exit (y/n)
 # - Allow user to select item in the menu (check if valid)
 # - Perform the selected option
 # - Option 1: Ask personal data for contact tracing (Listed are sample only, add more)
