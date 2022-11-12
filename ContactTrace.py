@@ -1,35 +1,54 @@
 #Write a python program for contact tracing:
 # - Display a menu of options
-print()
-print("---------------------------------")
-print("| PourOver Contact Tracing Form |")
-print("---------------------------------")
-print("|                               |")
-print("|     |1| Fill out the form     |")
-print("|     |2| Search for contact    |")
-print("|     |3| Edit contact          |")
-print("|     |4| Delete contact        |")
-print("|     |5| Exit                  |")
-print("|                               |")
-print("---------------------------------")
+contacts = {}
+info =[]
+def menu():
+    print()
+    print("---------------------------------")
+    print("| PourOver Contact Tracing Form |")
+    print("---------------------------------")
+    print("|                               |")
+    print("|     |1| Fill out the form     |")
+    print("|     |2| Search for contact    |")
+    print("|     |3| Edit contact          |")
+    print("|     |4| Delete contact        |")
+    print("|     |5| Exit                  |")
+    print("|                               |")
+    print("---------------------------------")
+    menu=input("| What can we do for you today? |")
+    print("---------------------------------")
+
+def yesno():
+    While True:
+        homemenu= input("Do you want to go bac to the menu? [Y/N] ")
+        if homemenu == "Y":
+            menu()
+            break
+        elif homemenu == "N":
+            print("Thank you for filling out the contact tracing form!")
 
 # Menu:
 # 1 -> Add an item
-contacts = {}
-info =[]
-name = input("Enter your first and last name: ")
-age = input("Enter your age: ")
-phone_num= input("Enter your phone number (ex. 09xxxxxxxxx): ")
-test_covid= input("Did you test positive for COVID or have any COVID-like symptoms? ")
+if menu == "1":
+    name = input("Enter your first and last name: ")
+    age = input("Enter your age: ")
+    phone_num= input("Enter your phone number (ex. 09xxxxxxxxx): ")
+    test_covid= input("Did you test positive for COVID or have any COVID-like symptoms? ")
 
-info.append(age)
-info.append(phone_num)
-info.append(test_covid)
-print (info)
-contacts[name]=info
-print (contacts)
+    info.append(age)
+    info.append(phone_num)
+    info.append(test_covid)
+    print (info)
+    contacts[name]=info
+    print (contacts)
 
-# 2 -> Search
+    # 2 -> Search
+elif menu == "2":
+    search = input("Enter the first an1d last name of the contact: ")
+    if search == contacts:
+        print("Name:", search)
+        print(contacts.get("search"))
+
 # 3 -> Edit info
 # 4 -> Delete info
 # 5 -> Exit (y/n)
