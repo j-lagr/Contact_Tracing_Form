@@ -2,7 +2,7 @@
 # - Display a menu of options
 contacts = {}
 info =[]
-def menu():
+def home():
     print()
     print("---------------------------------")
     print("| PourOver Contact Tracing Form |")
@@ -18,18 +18,26 @@ def menu():
     menu=input("| What can we do for you today? |")
     print("---------------------------------")
 
+    if menu =="1":
+        add_contact()
+    elif menu=="2":
+        search_contact()
+
+
 def yesno():
-    While True:
-        homemenu= input("Do you want to go bac to the menu? [Y/N] ")
+    while True:
+        homemenu=input("Do you want to go back to the menu? [Y|N] ")
         if homemenu == "Y":
-            menu()
+            home()
             break
         elif homemenu == "N":
             print("Thank you for filling out the contact tracing form!")
+            exit()    
+
 
 # Menu:
 # 1 -> Add an item
-if menu == "1":
+def add_contact():
     name = input("Enter your first and last name: ")
     age = input("Enter your age: ")
     phone_num= input("Enter your phone number (ex. 09xxxxxxxxx): ")
@@ -41,15 +49,23 @@ if menu == "1":
     print (info)
     contacts[name]=info
     print (contacts)
+    yesno()
 
-    # 2 -> Search
-elif menu == "2":
-    search = input("Enter the first an1d last name of the contact: ")
-    if search == contacts:
+# 2 -> Search
+def search_contact():
+    search = input("Enter the first and last name of the contact: ")
+    if search in contacts:
         print("Name:", search)
-        print(contacts.get("search"))
+        print(contacts[search])
+        yesno()
 
 # 3 -> Edit info
+def edit_contact():
+    edit = input("Enter the first and last name of the contact: ")
+    print(contacts.get("edit"))
+    print("Enter the new information")
+
+
 # 4 -> Delete info
 # 5 -> Exit (y/n)
 # - Allow user to select item in the menu (check if valid)
@@ -59,3 +75,5 @@ elif menu == "2":
 # Use the full name as keyThe value is another dictionary of personal information
 # - Option 2: Search, ask full name then display the record
 # - Option 3: Ask the user if want to exit or retry.
+
+home()
