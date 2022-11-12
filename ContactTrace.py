@@ -22,6 +22,8 @@ def home():
         add_contact()
     elif menu=="2":
         search_contact()
+    elif menu=="3":
+        edit_contact()
 
 
 def yesno():
