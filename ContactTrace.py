@@ -5,10 +5,24 @@ print("---------------------------------")
 print("| PourOver Contact Tracing Form |")
 print("---------------------------------")
 print("|                               |")
-print("|    |1|  ")
+print("|     |1| Fill out the form     |")
+print("|     |2| Search for contact    |")
+print("|     |3| Edit contact          |")
+print("|     |4| Delete contact        |")
+print("|     |5| Exit                  |")
+print("|                               |")
+print("---------------------------------")
 
 # Menu:
 # 1 -> Add an item
+contacts = {}
+info =[]
+name = input("Enter your first and last name: ")
+age = input("Enter your age: ")
+phone_num= input("Enter your phone number (ex. 09xxxxxxxxx): ")
+test_covid= input("Did you test positive for COVID or have any COVID-like symptoms? ")
+
+
 # 2 -> Search
 # 3 -> Edit info
 # 4 -> Delete info
