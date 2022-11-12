@@ -22,6 +22,12 @@ age = input("Enter your age: ")
 phone_num= input("Enter your phone number (ex. 09xxxxxxxxx): ")
 test_covid= input("Did you test positive for COVID or have any COVID-like symptoms? ")
 
+info.append(age)
+info.append(phone_num)
+info.append(test_covid)
+print (info)
+contacts[name]=info
+print (contacts)
 
 # 2 -> Search
 # 3 -> Edit info
