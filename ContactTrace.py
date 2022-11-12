@@ -55,16 +55,16 @@ def add_contact():
     age = input("Enter your age: ")
     phone_num= input("Enter your phone number (ex. 09xxxxxxxxx): ")
     test_covid= input("Did you test positive for COVID or have any COVID-like symptoms? ")
-
     info.append(age)
     info.append(phone_num)
     info.append(test_covid)
     print (info)
-    contacts[name]=info
+    contacts[name]=info.copy()
     print("Name:", name)
     print("Age:",contacts.get(name)[0])
     print("Phone Number:", contacts.get(name)[1])
     print("Covid Status:", contacts.get(name)[2])
+    info.clear()
     yesno()
 
 # 2 -> Search
